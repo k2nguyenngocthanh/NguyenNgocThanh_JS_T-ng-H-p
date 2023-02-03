@@ -91,14 +91,62 @@ Số X lớn nhất là:
 
 function bangCuuChuong(){
     let n=document.getElementById("nhapSoBatKy").value*1; 
+    let contentHTML = '';
     for(let i = 1; i <= 10; i++) {
 
-        // multiply i with number
-        const result = i * n;
+      
+       const  tich = i * n;
+        let content = `${n} x ${i} = ${tich} </br>`;
+
+        contentHTML+=content;
+
     
-        // display the result
-        console.log(`${n} * ${i} = ${result}`);
-        document.querySelector("#timX").innerHTML=`<h2 class="mt-5 text-danger text-center">
-</h2>`
+       
+        
+        document.querySelector("#bangCuuChuong").innerHTML=contentHTML
+
     }
 }
+
+
+//Bài 9
+function tim(){
+    let m=document.getElementById("nhapSoTong").value*1; 
+    let n=document.getElementById("nhapSoChan").value*1; 
+
+    let soChanGa = (4 * m - n) / 2;
+    let soChanCho = (n - 2 * m) / 2;
+
+    document.querySelector("#soGa").innerHTML=`<h2 class="mt-5 text-danger text-center">
+    Số gà là: ${soChanGa}</h2>`
+
+    document.querySelector("#soCho").innerHTML=`<h2 class="mt-5 text-danger text-center">
+    Số chó là: ${soChanCho}</h2>`
+
+}
+//Bài 10
+
+function angle() { 
+    let minute=document.getElementById("nhapSoPhut").value*1; 
+    console.log("🚀 ~ file: index.js:131 ~ angle ~ minute", minute)
+    let hour=document.getElementById("nhapSoGio").value*1; 
+    console.log("🚀 ~ file: index.js:133 ~ angle ~ hour", hour)
+   //60 phút kim phút quay được 360 độ =>1 phút quay được 360/60 = 6 độ
+   //12 giờ kim giờ quay được 360 độ=> 1 giờ quay được 360/12-30 độ
+   // 1 phút kim giờ quay được 0.5 độ 
+   // A=|kim phút - kim giờ|
+   /*   =|m*6- 0.5(h*60+m)|
+
+   */
+
+   let goc=Math.abs(minute*6 -(0.5*(hour*60+minute)))
+   console.log("🚀 ~ file: index.js:143 ~ angle ~ goc", goc)
+  
+    
+  
+  document.getElementById("tinhDo").innerHTML = `<h2 class="mt-5 text-danger text-center">
+ Góc lệch giữa kim giờ và kim phút là:  ${goc}</h2>`
+   
+    }
+ 
+   
