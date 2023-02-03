@@ -108,6 +108,22 @@ function bangCuuChuong(){
     }
 }
 
+//Bài 8
+function chiaBai(){
+    let players = [[], [], [], []];
+    let cards = ["4K", "KH", "5C", "KA", "QH", "KD", "2H", "10S", "AS", "7H", "9K", "10D"];
+    let contentHTML = "";
+    for(let i=0; i<players.length; i++){
+        for(let j=i; j< cards.length; j=j+4){
+            players[i].push(cards[j]);
+        }
+        contentHTML+=` Player ${i+1} = ${players[i]} <br>`;
+    }
+    document.getElementById("share").innerHTML = contentHTML;
+
+
+}
+
 
 //Bài 9
 function tim(){
